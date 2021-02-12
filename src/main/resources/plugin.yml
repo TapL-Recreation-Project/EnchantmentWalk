@@ -1,0 +1,9 @@
+name: EnchantmentWalk
+version: ${project.version}
+main: me.swipez.enchantmentwalk.EnchantmentWalk
+api-version: 1.16
+authors: [ notnotnotswipez ]
+commands:
+  enchantchallenge:
+    usage: /enchantchallenge <start/stop>
+    description: Starts and stops the challenge!
