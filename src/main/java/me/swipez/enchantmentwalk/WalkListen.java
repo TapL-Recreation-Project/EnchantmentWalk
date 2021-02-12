@@ -30,9 +30,10 @@ public class WalkListen implements Listener {
             // Check if stored location is different from current
             if (plugin.newloc.get(p.getUniqueId()).getX() != block.getX() || plugin.newloc.get(p.getUniqueId()).getY() != block.getY() || plugin.newloc.get(p.getUniqueId()).getZ() != block.getZ()){
                 // Enchantment count Notif system
-                // 
+                // Real counter for total enchants
                 int numofench = plugin.numofench.get(p.getUniqueId()) + 1;
                 plugin.numofench.put(p.getUniqueId(), numofench);
+                // Dummy counter for checking
                 int hundcount = plugin.hundcount.get(p.getUniqueId()) + 1;
                 plugin.hundcount.put(p.getUniqueId(), hundcount);
                 // Checks every 100, then resets back to 0, triggering the if statement
