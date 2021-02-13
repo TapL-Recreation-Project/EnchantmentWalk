@@ -14,11 +14,19 @@ public class CommandComplete implements TabCompleter {
             List<String> complete = new ArrayList<>();
             complete.add("start");
             complete.add("stop");
+            complete.add("reload");
+            if (args[0].startsWith("s")){
+                complete.remove("reload");
+            }
             if (args[0].startsWith("sto")){
                 complete.remove("start");
             }
             if (args[0].startsWith("sta")){
                 complete.remove("stop");
+            }
+            if (args[0].startsWith("r")){
+                complete.remove("stop");
+                complete.remove("start");
             }
             return complete;
         }

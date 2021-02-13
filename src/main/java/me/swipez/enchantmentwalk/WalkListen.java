@@ -10,7 +10,6 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -30,7 +29,6 @@ public class WalkListen implements Listener {
             // Check if stored location is different from current
             if (plugin.newloc.get(p.getUniqueId()).getX() != block.getX() || plugin.newloc.get(p.getUniqueId()).getY() != block.getY() || plugin.newloc.get(p.getUniqueId()).getZ() != block.getZ()){
                 // Enchantment count Notif system
-                // 
                 int numofench = plugin.numofench.get(p.getUniqueId()) + 1;
                 plugin.numofench.put(p.getUniqueId(), numofench);
                 int hundcount = plugin.hundcount.get(p.getUniqueId()) + 1;
@@ -52,7 +50,21 @@ public class WalkListen implements Listener {
                         if (enchants.containsKey(randEnchant)){
                             // Increases level if true
                             int enchvalue = enchants.get(randEnchant) + 1;
-                            meta.addEnchant(randEnchant, enchvalue, false);
+                            if (plugin.getConfig().get("enchantlimit").equals(true)){
+                                meta.addEnchant(randEnchant, enchvalue, false);
+                            }
+                            else if (plugin.getConfig().get("enchantlimit").equals(false)){
+                                try {
+                                    if (enchvalue >= ((int) plugin.getConfig().get("maxenchant"))){
+                                        enchvalue = ((int) plugin.getConfig().get("maxenchant"));
+                                    }
+
+                                }
+                                catch (NullPointerException ex){
+                                    ex.printStackTrace();
+                                }
+                                meta.addEnchant(randEnchant, enchvalue, true);
+                            }
                         }
                         else {
                             // Adds new Enchant if false

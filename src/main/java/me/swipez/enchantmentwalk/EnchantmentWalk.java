@@ -17,6 +17,8 @@ public final class EnchantmentWalk extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new WalkListen(this), this);
         getCommand("enchantchallenge").setExecutor(new StartCommand(this));
         getCommand("enchantchallenge").setTabCompleter(new CommandComplete());
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
 
     }
 

@@ -1,0 +1,5 @@
+# maxenchant is the maximum enchantment level any enchantment can be
+# enchantlimit limits enchantments to their vanilla values
+# maxenchant is useless if enchantlimit is set to true
+enchantlimit: true
+maxenchant: 12
