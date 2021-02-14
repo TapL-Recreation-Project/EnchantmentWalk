@@ -31,6 +31,7 @@ public class WalkListen implements Listener {
                 // Enchantment count Notif system
                 int numofench = plugin.numofench.get(p.getUniqueId()) + 1;
                 plugin.numofench.put(p.getUniqueId(), numofench);
+                // Dummy Counter
                 int hundcount = plugin.hundcount.get(p.getUniqueId()) + 1;
                 plugin.hundcount.put(p.getUniqueId(), hundcount);
                 // Checks every 100, then resets back to 0, triggering the if statement

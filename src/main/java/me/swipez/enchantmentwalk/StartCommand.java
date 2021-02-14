@@ -20,6 +20,7 @@ public class StartCommand implements CommandExecutor {
         if (sender instanceof Player){
             if (sender.hasPermission("enchantchallenge.toggle")){
                 Player p = (Player) sender;
+                // Arguments
                 if (args.length == 1){
                     if (args[0].equals("start")){
                         for (Player others : Bukkit.getOnlinePlayers()){

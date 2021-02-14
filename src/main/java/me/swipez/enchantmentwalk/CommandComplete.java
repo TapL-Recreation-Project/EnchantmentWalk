@@ -11,6 +11,7 @@ public class CommandComplete implements TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (args.length == 1){
+            // Guesses what you want and removes appropriately
             List<String> complete = new ArrayList<>();
             complete.add("start");
             complete.add("stop");
