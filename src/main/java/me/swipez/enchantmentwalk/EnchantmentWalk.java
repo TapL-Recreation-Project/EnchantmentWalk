@@ -1,5 +1,6 @@
 package me.swipez.enchantmentwalk;
 
+import me.swipez.enchantmentwalk.bstats.Metrics;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,10 +20,12 @@ public final class EnchantmentWalk extends JavaPlugin {
         getCommand("enchantchallenge").setTabCompleter(new CommandComplete());
         getConfig().options().copyDefaults();
         saveDefaultConfig();
+        new Metrics(this, 10430);
 
     }
 
     @Override
     public void onDisable() {
+
     }
 }
