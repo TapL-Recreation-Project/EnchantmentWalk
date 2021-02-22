@@ -21,9 +21,11 @@ public class CommandComplete implements TabCompleter {
             }
             if (args[0].startsWith("sto")){
                 complete.remove("start");
+                complete.remove("reload");
             }
             if (args[0].startsWith("sta")){
                 complete.remove("stop");
+                complete.remove("reload");
             }
             if (args[0].startsWith("r")){
                 complete.remove("stop");
