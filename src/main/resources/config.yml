@@ -1,5 +1,8 @@
+# enchantfullinventory will add an enchantment to every item in your inventory at once, otherwise, it will choose one random item
 # maxenchant is the maximum enchantment level any enchantment can be
 # enchantlimit limits enchantments to their vanilla values
 # maxenchant is useless if enchantlimit is set to true
+enchantfullinventory: true
 enchantlimit: true
 maxenchant: 12
+nosilktouch: false
