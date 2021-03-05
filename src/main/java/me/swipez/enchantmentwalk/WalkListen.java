@@ -8,6 +8,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -165,6 +166,14 @@ public class WalkListen implements Listener {
         if (plugin.hundcount.get(p.getUniqueId()) >= 100) {
             plugin.hundcount.put(p.getUniqueId(), 0);
             p.sendMessage("[" + ChatColor.LIGHT_PURPLE + "!" + ChatColor.WHITE + "]" + " You have been enchanted " + ChatColor.LIGHT_PURPLE + ChatColor.BOLD + plugin.numofench.get(p.getUniqueId()) + " times!");
+        }
+    }
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent e){
+        if (plugin.gamestarted){
+            Player player = e.getPlayer();
+            Location block = player.getWorld().getBlockAt(player.getLocation()).getLocation();
+            plugin.newloc.put(player.getUniqueId(), block);
         }
     }
 }
