@@ -1,0 +1,5 @@
+# Sets the locale for the plugin
+# The default locale file will be located in the "locales" folder and will be named locale_en
+# Set this to the prefix after the underscore of the file, for example:
+# if the file is named locale_de, set locale: de, if the file is named locale_pt, set locale: pt
+locale: en

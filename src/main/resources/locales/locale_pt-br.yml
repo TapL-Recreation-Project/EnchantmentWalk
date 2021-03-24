@@ -1,0 +1,9 @@
+# Portuguese (Brazil) translation for the LocaleBase plugin
+# Author: TapLRecreationProject
+# Locale code: pt-br
+no-permission: "&cVocê não tem permissão para executar esse comando."
+player-only-command: "&cEsse comando é apenas para jogadores!"
+config-reloaded: "&aConfiguração reinicializada!"
+challenge-started: "&aO desafio dos encantamentos à medida que você anda começou!"
+challenge-ended: "&aO desafio dos encantamentos à medida que você anda terminou!"
+enchanted-times: "[&d!&r] Você recebeu encantamentos &d&l{0} vezes!"

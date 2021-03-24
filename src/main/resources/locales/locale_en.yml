@@ -1,0 +1,9 @@
+# English translation for the LocaleBase plugin
+# Author: TapLRecreationProject
+# Locale code: en
+no-permission: "&cYou don't have the permission needed to run this command."
+player-only-command: "&cThis command is for players only!"
+config-reloaded: "&aConfig reloaded!"
+challenge-started: "&aEnchantment walk challenge has started!"
+challenge-ended: "&aEnchantment walk challenge has ended!"
+enchanted-times: "[&d!&r] You have been enchanted &d&l{0} times!"
