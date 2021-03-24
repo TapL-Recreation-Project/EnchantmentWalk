@@ -165,7 +165,7 @@ public class WalkListen implements Listener {
         // Checks every 100, then resets back to 0, triggering the if statement
         if (plugin.hundcount.get(p.getUniqueId()) >= 100) {
             plugin.hundcount.put(p.getUniqueId(), 0);
-            p.sendMessage("[" + ChatColor.LIGHT_PURPLE + "!" + ChatColor.WHITE + "]" + " You have been enchanted " + ChatColor.LIGHT_PURPLE + ChatColor.BOLD + plugin.numofench.get(p.getUniqueId()) + " times!");
+            p.sendMessage(plugin.locale.string("enchanted-times").replace("{0}",plugin.numofench.get(p.getUniqueId()).toString()));
         }
     }
     @EventHandler

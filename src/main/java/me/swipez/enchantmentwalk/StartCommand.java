@@ -29,19 +29,20 @@ public class StartCommand implements CommandExecutor {
                             plugin.numofench.put(others.getUniqueId(), 0);
                             plugin.hundcount.put(others.getUniqueId(), 0);
                         }
-                        Bukkit.broadcastMessage(ChatColor.GREEN+"Enchantment walk challenge has started!");
+                        Bukkit.broadcastMessage(plugin.locale.string("challenge-started"));
                         plugin.gamestarted = true;
                     }
                     if (args[0].equals("stop")) {
                         for (Player others : Bukkit.getOnlinePlayers()) {
                             plugin.newloc.remove(others.getUniqueId());
                         }
-                        Bukkit.broadcastMessage(ChatColor.GREEN+"Enchantment walk challenge has ended!");
+                        Bukkit.broadcastMessage(plugin.locale.string("challenge-ended"));
                         plugin.gamestarted = false;
                     }
                     if (args[0].equals("reload")) {
                         plugin.reloadConfig();
-                        p.sendMessage(ChatColor.GREEN+"Config reloaded!");
+                        plugin.locale.reloadConfig();
+                        p.sendMessage(plugin.locale.string("config-reloaded"));
                     }
                 }
                 else {
@@ -49,11 +50,11 @@ public class StartCommand implements CommandExecutor {
                 }
             }
             else {
-                sender.sendMessage(ChatColor.RED+"You dont have the permission needed to run this command.");
+                sender.sendMessage(plugin.locale.string("no-permission"));
             }
         }
         else {
-            sender.sendMessage(ChatColor.RED+"This command is for players only!");
+            sender.sendMessage(plugin.locale.string("player-only-command"));
         }
         return true;
     }
